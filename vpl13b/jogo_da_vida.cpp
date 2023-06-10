@@ -7,14 +7,32 @@ JogoDaVida::JogoDaVida(int l, int c){
 }
 
 bool JogoDaVida::viva(int i, int j){
+    if((i < 0 || i >= vivas_.size()) || (j < 0 || j >= vivas_[0].size())){
+        ExcecaoCelulaInvalida e;
+        e.linha = i;
+        e.coluna = j;
+        throw e;
+    }
     return vivas_[i][j];
 }
 
 void JogoDaVida::Matar(int i, int j){
+    if((i < 0 || i >= vivas_.size()) || (j < 0 || j >= vivas_[0].size())){
+        ExcecaoCelulaInvalida e;
+        e.linha = i;
+        e.coluna = j;
+        throw e;
+    }
     vivas_[i][j] = false;
 }
 
 void JogoDaVida::Reviver(int i, int j){
+    if((i < 0 || i >= vivas_.size()) || (j < 0 || j >= vivas_[0].size())){
+        ExcecaoCelulaInvalida e;
+        e.linha = i;
+        e.coluna = j;
+        throw e;
+    }
     vivas_[i][j] = true;
 }
 
