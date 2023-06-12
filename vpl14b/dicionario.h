@@ -12,7 +12,7 @@ struct DicionarioVazio{
 };
 
 // Exceção que indica que uma determinada chave não está no dicionário.
-struct ChaveInvalida{
+struct ChaveNaoExistente{
   string chave;
 };
 

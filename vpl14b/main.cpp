@@ -7,6 +7,7 @@ using namespace std;
 int main() {
   Dicionario m;
   string operacao, chave, valor;
+  int aux = 0;
   while (cin >> operacao) {
     try {
       if (operacao == "m") {
@@ -37,7 +38,7 @@ int main() {
       }
     } catch(DicionarioVazio z) {
       cout << "Não foi possível realizar a operação: Dicionário vazio" << endl;
-    } catch(ChaveInvalida k){
+    } catch(ChaveNaoExistente k){
       cout << "Não foi possível realizar a operação: A chave inexistente não está no dicionário" << endl;
     } catch(ChaveExistente e){
       cout << "Não foi possível realizar a operação: A chave repetida já está no dicionário" << endl;

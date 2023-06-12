@@ -39,11 +39,13 @@ string Dicionario::menor(){
 // Retorna o valor associado a chave.
 // Pré-condição: a chave *necessariamente* está no dicionário.
 string Dicionario::valor(string chave){
+    if(!pertence(chave)){
+        ChaveNaoExistente k{chave};
+        throw k;
+    }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
         if(it -> chave == chave) return it -> valor;
     }
-    ChaveInvalida k{chave};
-    throw k;
 }
 
 // Insere um par chave/valor no dicionário.
@@ -61,7 +63,7 @@ void Dicionario::Inserir(string chave, string valor){
 // Pré-condição: a chave *necessariamente* está no dicionário.
 void Dicionario::Remover(string chave){
     if(!pertence(chave)){
-        ChaveInvalida k{chave};
+        ChaveNaoExistente k{chave};
         throw k;
     }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
@@ -76,7 +78,7 @@ void Dicionario::Remover(string chave){
 // Pré-condição: a chave *necessariamente* está no dicionário.
 void Dicionario::Alterar(string chave, string valor){
     if(!pertence(chave)){
-        ChaveInvalida k{chave};
+        ChaveNaoExistente k{chave};
         throw k;
     }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
