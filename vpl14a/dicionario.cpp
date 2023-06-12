@@ -55,7 +55,10 @@ void Dicionario::Inserir(string chave, string valor){
 
 void Dicionario::Remover(string chave){
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
-        if(it -> chave == chave) elementos_.erase(it -> chave);
+        if(it -> chave == chave) {
+            elementos_.erase(it);
+            break;
+        }
     }
     /*for(auto element : elementos_){
         if(element.chave == chave) elementos_.erase(element);
