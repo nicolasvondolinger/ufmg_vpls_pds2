@@ -11,13 +11,13 @@ Dicionario::Dicionario(){
 
 int Dicionario::tamanho(){
     int a = 0;
-    for(auto it = elementos_.begin(); it != elementos_.end(); it++) a++;
+    for(auto element : elementos_) a++;
     return a;
 }
 
 bool Dicionario::pertence(string chave){
-    for(auto it : elementos_){
-        if (it.chave == chave) return true;
+    for(auto element : elementos_){
+        if (element.chave == chave) return true;
     }
     return false;
 }
@@ -32,8 +32,8 @@ string Dicionario::menor(){
 }
 
 string Dicionario::valor(string chave){
-    for(auto it : elementos_){
-        if (it.chave == chave) return it.valor;
+    for(auto element : elementos_){
+        if (element.chave == chave) return element.valor;
     }
 }
 
