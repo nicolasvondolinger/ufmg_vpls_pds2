@@ -29,3 +29,15 @@ void Dicionario::Inserir(string chave, string valor){
     toInsert.valor = valor;
     elementos_.push_back(toInsert);
 }
+
+void Dicionario::Remover(string chave){
+    for(auto element : elementos_){
+        if(element.chave == chave) elementos_.remove(element);
+    }
+}
+
+void Dicionario::Alterar(string chave, string valor){
+    for(auto element : elementos_){
+        if(element.chave == chave) element.valor = valor;
+    }
+}
