@@ -5,13 +5,11 @@
 using std::list;
 using std::string;
 
-Dicionario::Dicionario(){
-
-}
+Dicionario::Dicionario(){}
 
 int Dicionario::tamanho(){
     int a = 0;
-    for(auto element : elementos_) a++;
+    for(auto it = elementos_.begin(); it != elementos_.end(); it++) a++;
     return a;
 }
 
@@ -39,7 +37,7 @@ string Dicionario::menor(){
 
 string Dicionario::valor(string chave){
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
-        if(it -> chave == chave) return it -> chave;
+        if(it -> chave == chave) return it -> valor;
     }
     /*for(auto element : elementos_){
         if (element.chave == chave) return element.valor;
@@ -47,9 +45,7 @@ string Dicionario::valor(string chave){
 }
 
 void Dicionario::Inserir(string chave, string valor){
-    Elemento toInsert;
-    toInsert.chave = chave;
-    toInsert.valor = valor;
+    Elemento toInsert{chave, valor};
     elementos_.push_back(toInsert);
 }
 
