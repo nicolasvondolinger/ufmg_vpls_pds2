@@ -1,4 +1,13 @@
 #include "dicionario.h"
+#include <list>
+#include <string>
+
+using std::list;
+using std::string;
+
+Dicionario::Dicionario(){
+
+}
 
 int Dicionario::tamanho(){
     int a = 0;
@@ -14,7 +23,12 @@ bool Dicionario::pertence(string chave){
 }
 
 string Dicionario::menor(){
+    string menorChave = elementos_.front().chave;
+    for (auto element : elementos_) {
+        if (element.chave < menorChave) menorChave = element.chave;
+    }
 
+    return menorChave;
 }
 
 string Dicionario::valor(string chave){
