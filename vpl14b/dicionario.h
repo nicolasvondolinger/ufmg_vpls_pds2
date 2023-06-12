@@ -8,13 +8,19 @@ using std::list;
 using std::string;
 
 // Exceção que indica que o dicionário está vazio.
-// ...
+struct DicionarioVazio{
+};
 
 // Exceção que indica que uma determinada chave não está no dicionário.
-// ...
+struct ChaveInvalida{
+  string chave;
+};
 
 // Exceção que indica que uma determinada chave já se encontra no dicionário.
-// ...
+struct ChaveExistente{
+  string chave;
+  string valor;
+};
 
 // Implementa um dicionário que mapeia uma chave (do tipo string)
 // a um valor (também do tipo string).

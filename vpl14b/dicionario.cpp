@@ -21,7 +21,13 @@ bool Dicionario::pertence(string chave){
     return false;
 }
 
+// Retorna a *menor* chave do dicionário.
+// Pré-condição: o dicionário não está vazio.
 string Dicionario::menor(){
+    if(tamanho() == 0){
+        DicionarioVazio z;
+        throw z;
+    }
     string menorChave = elementos_.front().chave;
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
         if(it -> chave < menorChave) menorChave = it -> chave;
@@ -30,18 +36,34 @@ string Dicionario::menor(){
     return menorChave;
 }
 
+// Retorna o valor associado a chave.
+// Pré-condição: a chave *necessariamente* está no dicionário.
 string Dicionario::valor(string chave){
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
         if(it -> chave == chave) return it -> valor;
     }
+    ChaveInvalida k{chave};
+    throw k;
 }
 
+// Insere um par chave/valor no dicionário.
+// Pré-condição: a chave *não* está no dicionário.
 void Dicionario::Inserir(string chave, string valor){
+    if(pertence(chave)){
+        ChaveExistente e{chave, valor};
+        throw e;
+    }
     Elemento toInsert{chave, valor};
     elementos_.push_back(toInsert);
 }
 
+// Remove um par chave/valor do dicionário.
+// Pré-condição: a chave *necessariamente* está no dicionário.
 void Dicionario::Remover(string chave){
+    if(!pertence(chave)){
+        ChaveInvalida k{chave};
+        throw k;
+    }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
         if(it -> chave == chave) {
             elementos_.erase(it);
@@ -50,7 +72,13 @@ void Dicionario::Remover(string chave){
     }
 }
 
+// Altera o valor associado a uma chave do dicionário.
+// Pré-condição: a chave *necessariamente* está no dicionário.
 void Dicionario::Alterar(string chave, string valor){
+    if(!pertence(chave)){
+        ChaveInvalida k{chave};
+        throw k;
+    }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
         if(it -> chave == chave) it -> valor = valor;
     }
