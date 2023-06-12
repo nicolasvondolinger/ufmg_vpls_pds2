@@ -41,3 +41,7 @@ void Dicionario::Alterar(string chave, string valor){
         if(element.chave == chave) element.valor = valor;
     }
 }
+
+Dicionario::~Dicionario(){
+    elementos_.clear();
+}
