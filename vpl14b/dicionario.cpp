@@ -41,7 +41,7 @@ string Dicionario::menor(){
 string Dicionario::valor(string chave){
     if(!pertence(chave)){
         ChaveNaoExistente k;
-        k.tipo = "inexistente"; 
+        k.chave = chave; 
         throw k;
     }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
@@ -54,7 +54,7 @@ string Dicionario::valor(string chave){
 void Dicionario::Inserir(string chave, string valor){
     if(pertence(chave)){
         ChaveExistente e;
-        e.tipo = "repetida";
+        e.chave = chave;
         throw e;
     }
     Elemento toInsert{chave, valor};
@@ -66,7 +66,7 @@ void Dicionario::Inserir(string chave, string valor){
 void Dicionario::Remover(string chave){
     if(!pertence(chave)){
         ChaveNaoExistente k;
-        k.tipo = "inexistente";
+        k.chave = chave;
         throw k;
     }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
@@ -82,7 +82,7 @@ void Dicionario::Remover(string chave){
 void Dicionario::Alterar(string chave, string valor){
     if(!pertence(chave)){
         ChaveNaoExistente k;
-        k.tipo = "inexistente";
+        k.chave = chave;
         throw k;
     }
     for(auto it = elementos_.begin(); it != elementos_.end(); it++){
