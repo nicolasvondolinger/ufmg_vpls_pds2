@@ -39,9 +39,9 @@ int main() {
     } catch(DicionarioVazio z) {
       cout << "Não foi possível realizar a operação: Dicionário vazio" << endl;
     } catch(ChaveNaoExistente k){
-      cout << "Não foi possível realizar a operação: A chave inexistente não está no dicionário" << endl;
+      cout << "Não foi possível realizar a operação: A chave " << k.tipo << " não está no dicionário" << endl;
     } catch(ChaveExistente e){
-      cout << "Não foi possível realizar a operação: A chave repetida já está no dicionário" << endl;
+      cout << "Não foi possível realizar a operação: A chave " << e.tipo << " já está no dicionário" << endl;
     }
   }
 }

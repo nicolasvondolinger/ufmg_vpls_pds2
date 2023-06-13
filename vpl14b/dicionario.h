@@ -13,13 +13,12 @@ struct DicionarioVazio{
 
 // Exceção que indica que uma determinada chave não está no dicionário.
 struct ChaveNaoExistente{
-  string chave;
+  string tipo;
 };
 
 // Exceção que indica que uma determinada chave já se encontra no dicionário.
 struct ChaveExistente{
-  string chave;
-  string valor;
+  string tipo;
 };
 
 // Implementa um dicionário que mapeia uma chave (do tipo string)
