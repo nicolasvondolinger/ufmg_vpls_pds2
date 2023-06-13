@@ -1,6 +1,4 @@
-# ufmg_vpls
-
-## Diretório de Exercícios da Disciplina de Programação e Desenvolvimento de Software II
+# Diretório de Exercícios PDS II - UFMG
 
 Bem-vindo ao diretório de exercícios da disciplina de Programação e Desenvolvimento de Software II da Universidade Federal de Minas Gerais (UFMG). Este repositório contém todos os exercícios aplicados pelo professor durante o curso de Sistemas de Informação. Aqui você encontrará uma variedade de projetos relacionados ao desenvolvimento de software, visando aprimorar suas habilidades de programação.
 
