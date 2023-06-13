@@ -1,6 +1,6 @@
 # Diretório de Exercícios PDS II - UFMG
 
-Bem-vindo ao diretório de exercícios da disciplina de Programação e Desenvolvimento de Software II da Universidade Federal de Minas Gerais (UFMG). Este repositório contém todos os exercícios aplicados pelo professor durante o curso de Sistemas de Informação. Aqui você encontrará uma variedade de projetos relacionados ao desenvolvimento de software, visando aprimorar suas habilidades de programação.
+Bem-vindo ao diretório de exercícios da disciplina de Programação e Desenvolvimento de Software II da Universidade Federal de Minas Gerais (UFMG). Este repositório contém todos os exercícios aplicados pelo professor durante o curso de Sistemas de Informação. Aqui você encontrará uma variedade de projetos relacionados ao desenvolvimento de software, visando aprimorar suas habilidades de programação utilizando C++.
 
 ### Estrutura do Diretório:
 
@@ -12,7 +12,7 @@ Este diretório é o local principal onde os exercícios estão organizados. Cad
 
 Cada pasta numerada contém os arquivos específicos do exercício em questão. Isso pode incluir códigos-fonte, recursos adicionais, bibliotecas e documentação relacionada.
 
-    /Exercícios/[Número do Exercício]/README.md
+    /Exercícios/vpl[Número do Exercício]/README.md
 
 Cada pasta de exercício contém um arquivo README.md que fornece informações detalhadas sobre o exercício, incluindo uma descrição do problema, instruções para execução e, se necessário, dicas para sua solução.
 
