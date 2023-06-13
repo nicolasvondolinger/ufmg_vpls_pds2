@@ -9,8 +9,10 @@ void GooglePassword::insert(const std::string& url,
                             const std::string& login,
                             const std::string& password) {
   // TODO: Implemente este metodo
-  Usuario newUser{login, password};
-  passwords_.insert({url, newUser});
+  if(validPassword(password)){
+    Usuario newUser{login, password};
+    passwords_.insert({url, newUser});
+  }
 }
 
 //remove as informações associadas a um site
@@ -18,8 +20,7 @@ void GooglePassword::remove(const std::string& url) {
   // TODO: Implemente este metodo
   for(auto it = passwords_.begin(); it != passwords_.end(); it++){
     if(it -> first == url){
-      passwords_.erase(it -> second.login);
-      passwords_.erase(it -> second.password);
+      passwords_.erase(it);
     }
   }
 }
@@ -39,8 +40,10 @@ void GooglePassword::update(const std::string& url,
   for(auto it = passwords_.begin(); it != passwords_.end(); it++){
     if(it -> first == url){
       if(it -> second.password == old_password){
-        it -> second.login = login;
-        it -> second.password = new_password;
+        if(validPassword(new_password)){
+          it -> second.login = login;
+          it -> second.password = new_password;
+        }
       }
     }
   }
@@ -69,18 +72,11 @@ void GooglePassword::printPasswords() {
 // verifica se o password passa em todas as restricoes
 bool GooglePassword::validPassword(const std::string& password) const {
   // TODO: Implemente este metodo
-  if(password.length() > 50 || password.length() < 6) return false;
+  if(password == "123456" || password.length() > 50 || password.length() < 6) return false;
 
-  for(int i = 0; i < password.length(); i ++){
-    if(password[i] == ' ') return false;
-    if(password[i] == '1'){
-      string final;
-      for (int j = 0; j < 5; j++){
-        final += password[i+j];
-      }   
-      if(final == "123456") return false;  
-    }
-  }
+  if(password.find("123456") != string::npos) return false;
+
+  for(int i = 0; i < password.length(); i ++) if(password[i] == ' ') return false; 
 
   return true;
 }
