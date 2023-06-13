@@ -6,13 +6,13 @@ Bem-vindo ao diretório de exercícios da disciplina de Programação e Desenvol
 
 ### Estrutura do Diretório:
 
-    /Exercícios/
+    ## /ufmg_vpls_pds2/
         Este diretório é o local principal onde os exercícios estão organizados. Cada exercício possui sua própria pasta numerada, contendo todos os arquivos relacionados a ele.
 
-    /Exercícios/[Número do Exercício]/
+    ## /ufmg_vpls_pds2/vpl[Número do Exercício]/
         Cada pasta numerada contém os arquivos específicos do exercício em questão. Isso pode incluir códigos-fonte, recursos adicionais, bibliotecas e documentação relacionada.
 
-    /Exercícios/[Número do Exercício]/README.md
+    ## /Exercícios/[Número do Exercício]/README.md
         Cada pasta de exercício contém um arquivo README.md que fornece informações detalhadas sobre o exercício, incluindo uma descrição do problema, instruções para execução e, se necessário, dicas para sua solução.
 
 ### Execução dos Projetos:
@@ -21,35 +21,35 @@ Para executar os projetos deste diretório, você encontrará instruções espec
 
 #### No Linux:
 
-    Certifique-se de ter um ambiente de desenvolvimento adequado instalado em seu sistema, incluindo um compilador de C/C++ (por exemplo, GCC) e as bibliotecas necessárias.
+Certifique-se de ter um ambiente de desenvolvimento adequado instalado em seu sistema, incluindo um compilador de C/C++ (por exemplo, GCC) e as bibliotecas necessárias.
 
-    Abra o terminal e navegue até o diretório do exercício específico usando o comando cd.
+Abra o terminal e navegue até o diretório do exercício específico usando o comando cd.
 
-    Leia o arquivo README.md presente na pasta do exercício para obter informações detalhadas sobre como compilar e executar o projeto.
+Leia o arquivo README.md presente na pasta do exercício para obter informações detalhadas sobre como compilar e executar o projeto.
 
-    Geralmente, você pode compilar um projeto usando o GCC com o seguinte comando:
+Geralmente, você pode compilar um projeto usando o GCC com o seguinte comando:
 
-        gcc arquivo.c -o executavel
+    g++ arquivo.cpp -o executavel -lm
 
-    Isso criará um executável chamado "executavel" a partir do arquivo de código-fonte "arquivo.c".
+Isso criará um executável chamado "executavel" a partir do arquivo de código-fonte "arquivo.c".
 
-    Execute o programa com o comando:
+Execute o programa com o comando:
 
-        ./executavel
+    ./executavel
 
-    Certifique-se de seguir quaisquer outras instruções específicas fornecidas no arquivo README.md do exercício.
+Certifique-se de seguir quaisquer outras instruções específicas fornecidas no arquivo README.md do exercício.
 
-No Windows:
+### No Windows:
 
-    Certifique-se de ter um ambiente de desenvolvimento adequado instalado em seu sistema, como o Visual Studio ou o GCC (que também pode ser usado no Windows).
+Certifique-se de ter um ambiente de desenvolvimento adequado instalado em seu sistema, como o Visual Studio ou o GCC (que também pode ser usado no Windows).
 
-    Abra o prompt de comando ou o PowerShell e navegue até o diretório do exercício específico usando o comando cd.
+Abra o prompt de comando ou o PowerShell e navegue até o diretório do exercício específico usando o comando cd.
 
-    Leia o arquivo README.md presente na pasta do exercício para obter informações detalhadas sobre como compilar e executar o projeto.
+Leia o arquivo README.md presente na pasta do exercício para obter informações detalhadas sobre como compilar e executar o projeto.
 
-    Geralmente, você pode compilar um projeto usando o GCC no Windows da seguinte forma:
+Geralmente, você pode compilar um projeto usando o GCC no Windows da seguinte forma:
 
-        gcc arquivo.c -o executavel
+    g++ arquivo.c -o executavel
 
 Isso criará um executável chamado "executavel" a partir do arquivo de código-fonte "arquivo.c".
 
@@ -57,6 +57,6 @@ Execute o programa com o comando:
 
     executavel
 
-    Certifique-se de seguir quaisquer outras instruções específicas fornecidas no arquivo README.md do exercício.
+Certifique-se de seguir quaisquer outras instruções específicas fornecidas no arquivo README.md do exercício.
 
 Lembre-se de que essas são instruções gerais e podem variar dependendo dos requisitos específicos de cada exercício. Sempre consulte o arquivo README.md presente em cada pasta de exercício para obter instruções completas sobre como compilar, executar e interagir com o projeto em questão.
