@@ -1,5 +1,10 @@
 #ifndef _ESTOQUE_H
 #define _ESTOQUE_H
+#include <map>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 /**
  * \details  Este arquivo eh parte de um VPL de PDS II
@@ -149,6 +154,7 @@ class Estoque {
 
   private:
     // TODO: acrescente novas estruturas de dados e novos metodos aqui.
+    map <string, int> estoque_;
 };
 
 #endif
