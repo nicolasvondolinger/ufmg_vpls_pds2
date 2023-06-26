@@ -4,21 +4,23 @@
 
 void Estoque::add_mercadoria(const std::string& mercadoria, unsigned int qtd) {
   // TODO
-  if(estoque_.find(mercadoria) != estoque_.end()){
-    estoque_.insert({mercadoria, qtd});
+  auto it = estoque_.find(mercadoria);
+  if(it != estoque_.end()){
+    it -> second += qtd;
   } else{
-    estoque_[mercadoria] += qtd;
+    estoque_.insert({mercadoria, qtd});
   }
 }
 
 void Estoque::sub_mercadoria(const std::string& mercadoria, unsigned int qtd) {
   // TODO
-  if(estoque_.find(mercadoria) == estoque_.end()){
+  auto it = estoque_.find(mercadoria);
+  if(it == estoque_.end()){
     cout << mercadoria << " inexistente" << endl;
-  } else if (estoque_[mercadoria] < qtd){
+  } else if (it -> second < qtd){
     cout << mercadoria << " insuficiente" << endl;
   } else{
-    estoque_[mercadoria] -= qtd;
+    it -> second -= qtd;
   }
 }
 
@@ -58,18 +60,22 @@ Estoque& Estoque::operator -= (const Estoque& rhs) {
 
 bool operator < (Estoque& lhs, Estoque& rhs) {
   // TODO
-  for(auto it = lhs.estoque_.begin(); it != lhs.estoque_.end(); ++it){
-    if(rhs.estoque_.find(it -> first) == rhs.estoque_.end()) return false;
-    if(rhs.estoque_[it -> first] < it -> second) return false;
-  }
+  for(auto it = lhs.estoque_.begin(); it != lhs.estoque_.end(); it++) {
+      if (rhs.estoque_.find(it->first) == rhs.estoque_.end() || 
+          it->second >= rhs.estoque_.find(it->first)->second) {
+        return false;
+      }
+    }
   return true;
 }
 
 bool operator > (Estoque& lhs, Estoque& rhs) {
   // TODO
-  for(auto it = lhs.estoque_.begin(); it != lhs.estoque_.end(); ++it){
-    if(rhs.estoque_.find(it -> first) == rhs.estoque_.end()) return false;
-    if(rhs.estoque_[it -> first] > it -> second) return false;
-  }
+  for(auto it = rhs.estoque_.begin(); it != rhs.estoque_.end(); it++) {
+      if (lhs.estoque_.find(it->first) == lhs.estoque_.end() || 
+          it->second >= lhs.estoque_.find(it->first)->second) {
+        return false;
+      }
+    }
   return true;
 }
